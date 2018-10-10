@@ -1,0 +1,5 @@
+//Add this After canonical tag
+{% comment %}<link rel="canonical" href="{{ canonical_url }}">{% endcomment %}
+{% if template == 'collection' or template == 'product' or template == 'search' %}{% if shop.customer_accounts_enabled %}{% if customer %}{% else %}
+<meta http-equiv="refresh" content="0;url={{shop.url}}/account/login" />
+<script type="text/javascript">window.location = '{{shop.url}}/account/login?url={{ theme_role | theme_url }}';</script>{% endif %}{% endif %}{% endif %}
